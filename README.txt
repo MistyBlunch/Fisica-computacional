@@ -1,4 +1,4 @@
-﻿Para ejecutar en Excel:
+﻿Para ejecutar en Excel(Primera actualización):
 
 1. Abrir excel y hacer click a "Datos"
 2. Hacer click en "Obtener datos externos" y luego a "Desde un archivo de texto"
