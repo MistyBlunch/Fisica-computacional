@@ -199,7 +199,6 @@ int main() {
     
     
     for(int planet = 0; planet<9; planet++){
-//    	std::cin >> planeta;
     	
     	switch(planet) {
     		
@@ -265,7 +264,7 @@ int main() {
 					return EXIT_FAILURE;
 				}
 				break;		
-			//complete
+			//completed
 		}
     
 	    Textures[planet].setSmooth(true);
