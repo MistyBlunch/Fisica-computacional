@@ -81,7 +81,7 @@ int main() {
 	Rx[venus] = -0.723; 
 	Ry[venus] = 0;
 	
-	R[venus] = std::sqrt(std::pow(Rx[mercury], 2) + std::pow(Ry[mercury], 2));  //como pitágoras ;
+	R[venus] = std::sqrt(std::pow(Rx[mercury], 2) + std::pow(Ry[mercury], 2));  
 	
 	Vx[venus] = 0;
 	Vy[venus] = 7.385896747252145;
@@ -93,7 +93,7 @@ int main() {
 	Rx[earth] = -1; 
 	Ry[earth] = 0;
 	
-	R[earth] = std::sqrt(std::pow(Rx[mercury], 2) + std::pow(Ry[mercury], 2));  //como pitágoras ;
+	R[earth] = std::sqrt(std::pow(Rx[mercury], 2) + std::pow(Ry[mercury], 2));  
 	
 	Vx[earth] = 0;
 	Vy[earth] = 6.2783201069518713;
@@ -105,7 +105,7 @@ int main() {
 	Rx[mars] = -1; 
 	Ry[mars] = 0;
 	
-	R[mars] = std::sqrt(std::pow(Rx[mars], 2) + std::pow(Ry[mars], 2));  //como pitágoras ;
+	R[mars] = std::sqrt(std::pow(Rx[mars], 2) + std::pow(Ry[mars], 2));  
 	
 	Vx[mars] = 0;
 	Vy[mars] = 5.088228800197652;
@@ -117,7 +117,7 @@ int main() {
 	Rx[jupyter] = -1; 
 	Ry[jupyter] = 0;
 	
-	R[jupyter] = std::sqrt(std::pow(Rx[jupyter], 2) + std::pow(Ry[jupyter], 2));  //como pitágoras ;
+	R[jupyter] = std::sqrt(std::pow(Rx[jupyter], 2) + std::pow(Ry[jupyter], 2)); 
 	
 	Vx[jupyter] = 0;
 	Vy[jupyter] = 2.757434844921779;
@@ -129,10 +129,10 @@ int main() {
 	Rx[saturn] = -1; 
 	Ry[saturn] = 0;
 	
-	R[saturn] = std::sqrt(std::pow(Rx[saturn], 2) + std::pow(Ry[saturn], 2));  //como pitágoras ;
+	R[saturn] = std::sqrt(std::pow(Rx[saturn], 2) + std::pow(Ry[saturn], 2));  
 	
 	Vx[saturn] = 0;
-	Vy[saturn] = 2045.92397725461;
+	Vy[saturn] = 2.04592397725461;
 	
 	Ax[saturn] = -1 * G * Rx[saturn] / std::pow(R[saturn],3);
 	Ay[saturn] = -1 * G * Ry[saturn] / std::pow(R[saturn],3);
@@ -141,10 +141,10 @@ int main() {
 	Rx[uranus] = -1; 
 	Ry[uranus] = 0;
 	
-	R[uranus] = std::sqrt(std::pow(Rx[uranus], 2) + std::pow(Ry[uranus], 2));  //como pitágoras ;
+	R[uranus] = std::sqrt(std::pow(Rx[uranus], 2) + std::pow(Ry[uranus], 2));  
 	
 	Vx[uranus] = 0;
-	Vy[uranus] = 1440.369118632118;
+	Vy[uranus] = 1.451424791469162;
 	
 	Ax[uranus] = -1 * G * Rx[uranus] / std::pow(R[uranus],3);
 	Ay[uranus] = -1 * G * Ry[uranus] / std::pow(R[uranus],3);
@@ -153,10 +153,10 @@ int main() {
 	Rx[neptune] = -1; 
 	Ry[neptune] = 0;
 	
-	R[neptune] = std::sqrt(std::pow(Rx[neptune], 2) + std::pow(Ry[neptune], 2));  //como pitágoras ;
+	R[neptune] = std::sqrt(std::pow(Rx[neptune], 2) + std::pow(Ry[neptune], 2));  
 	
 	Vx[neptune] = 0;
-	Vy[neptune] = 1152.967903190608;
+	Vy[neptune] =1.597924386434614;
 	
 	Ax[neptune] = -1 * G * Rx[neptune] / std::pow(R[neptune],3);
 	Ay[neptune] = -1 * G * Ry[neptune] / std::pow(R[neptune],3);
@@ -165,10 +165,10 @@ int main() {
 	Rx[pluto] = -1; 
 	Ry[pluto] = 0;
 	
-	R[pluto] = std::sqrt(std::pow(Rx[pluto], 2) + std::pow(Ry[pluto], 2));  //como pitágoras ;
+	R[pluto] = std::sqrt(std::pow(Rx[pluto], 2) + std::pow(Ry[pluto], 2));  
 	
 	Vx[pluto] = 0;
-	Vy[pluto] = 1000.381116504175;
+	Vy[pluto] = 0.7514865140630287;
 	
 	Ax[pluto] = -1 * G * Rx[pluto] / std::pow(R[pluto],3);
 	Ay[pluto] = -1 * G * Ry[pluto] / std::pow(R[pluto],3);
@@ -200,6 +200,13 @@ int main() {
     
     for(int planet = 0; planet<9; planet++){
     	
+    	if(planet == 5) {
+    		sf::RectangleShape(sf::Vector2f(45, 25));
+		    	if (!Textures[planet].loadFromFile("saturno.png")){
+					return EXIT_FAILURE;
+				}
+				break;
+		}
     	switch(planet) {
     		
     		case 0:
@@ -235,17 +242,10 @@ int main() {
 		    	if (!Textures[planet].loadFromFile("jupiter.png")){
 					return EXIT_FAILURE;
 				}
-				break;
-			
-			case 5:
-				Radius[planet] = 25;
-		    	if (!Textures[planet].loadFromFile("saturno.png")){
-					return EXIT_FAILURE;
-				}
 				break;		
 			
 			case 6:
-				Radius[planet] = 30;
+				Radius[planet] = 35;
 		    	if (!Textures[planet].loadFromFile("urano.png")){
 					return EXIT_FAILURE;
 				}
@@ -291,13 +291,13 @@ int main() {
             }
 		}
 		
-		window.clear(Black);
+		window.clear(Amber);
 		window.draw(sun);
 		
 		for(int planet = 0; planet < 9; planet++){
 			
-			X[planet] = 200 * Rx[planet] + 0.5 * windowWidth;
-			Y[planet] = -200 * Ry[planet] + 0.5 * windowHeight;
+			X[planet] = 50 * Rx[planet] + 0.5 * windowWidth;
+			Y[planet] = -50 * Ry[planet] + 0.5 * windowHeight;
 			
 			Shape[planet].setPosition(X[planet], Y[planet]);  
 			
